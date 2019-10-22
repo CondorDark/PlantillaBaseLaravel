@@ -4,19 +4,18 @@
  * application frontend using useful Laravel and JavaScript libraries.
  */
 
-require('./bootstrap');
-/** Plugins */
-import Vue from 'vue';
-import VueRouter from 'vue-router'
+//require('./bootstrap');
 
-Vue.use(VueRouter)
-
-/** Componentes */
+// /** Componentes Global*/
 import prueba from './components/App_Prueba.vue';
 
+// /** Declaración Componente Global */
 Vue.component('app-prueba', prueba);
 
+import Vue     from 'vue';
+import Routers from './routers/router';
 
-const app = new Vue({
-    el : '#app',
+export let app = new Vue({
+   el: '#app',
+   Routers,
 });
