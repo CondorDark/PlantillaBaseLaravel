@@ -6,16 +6,21 @@
 
 //require('./bootstrap');
 
-// /** Componentes Global*/
-import prueba from './components/App_Prueba.vue';
-
-// /** Declaración Componente Global */
-Vue.component('app-prueba', prueba);
-
 import Vue     from 'vue';
-import Routers from './routers/router';
+import vuetify from 'vuetify';
+import router  from './routers';
+import store   from './stores';
+
+/** Componentes Global
+ *  Declaración Global Componente
+*/
+import App from './views/App.vue';
+Vue.component('App', App);
 
 export let app = new Vue({
    el: '#app',
-   Routers,
+   router,
+   store,
+   vuetify,
+   render: h => h(App)
 });

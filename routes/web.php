@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/{any?}', function () {
-    return view('Home');
-})->where('any', '(.*)');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('any/{any}', function ($any) {
+    return $any;
+})->where('any', '.*');
