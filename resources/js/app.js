@@ -15,7 +15,7 @@ import store   from './stores';
  *  Declaración Global Componente
 */
 import App from './views/App.vue';
-Vue.component('App', App);
+Vue.component('app', App);
 
 export let app = new Vue({
    el: '#app',
