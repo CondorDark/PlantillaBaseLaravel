@@ -11,7 +11,11 @@
 |
 */
 
+//Route::get('/', 'HomeController/@index')->name('home');
+
 Route::get('/', 'HomeController@index')->name('home');
+
+//Route::get('/login', 'AccessAuthController@index')->name('login');
 
 Route::get('any/{any}', function ($any) {
     return $any;
