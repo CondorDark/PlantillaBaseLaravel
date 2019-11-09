@@ -11,12 +11,21 @@
 |
 */
 
-//Route::get('/', 'HomeController/@index')->name('home');
+/** Routes Auth
+ * 
+*/
+Auth::routes();
+Route::get('/login', 'Auth\LoginController@index')->name('login');
 
-Route::get('/', 'HomeController@index')->name('home');
+/** Routes
+ *  Home Application
+*/
+Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('/login', 'AccessAuthController@index')->name('login');
 
+/** Route SPA
+ *  Router One Function the SPA
+*/
 Route::get('any/{any}', function ($any) {
     return $any;
 })->where('any', '.*');
