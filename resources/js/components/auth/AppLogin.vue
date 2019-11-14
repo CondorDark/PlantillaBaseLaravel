@@ -129,7 +129,7 @@
                                         <v-btn 
                                             color = "error" 
                                             icon
-                                            :href = "sourceWeb"
+                                            :href = "sourceForgot"
                                             >
 
                                             <v-icon v-on="on">mdi-lock-question</v-icon>
@@ -151,7 +151,7 @@
                                         <v-btn 
                                             color = "success" 
                                             icon
-                                            :href = "sourceWeb"
+                                            :href = "sourceAccount"
                                             >
 
                                             <v-icon v-on="on">mdi-account-plus</v-icon>
@@ -176,7 +176,7 @@
                                             :href = "sourceApp"
                                             >
 
-                                            <v-icon v-on="on">mdi-send</v-icon>
+                                            <v-icon v-on="on">mdi-open-in-app</v-icon>
 
                                         </v-btn>
 
@@ -206,12 +206,21 @@
 export default {
     data () {
         return {
-            show : false,
-            sourceWeb : '',
-            sourceApp : '',
-            sourceImg : '',
-            imgAccount : false,
+            show            : false,
+            sourceWeb       : '',
+            sourceForgot    : '',
+            sourceAccount   : '',
+            sourceApp       : '',
+            sourceImg       : '',
+            imgAccount      : false,
         };
+    },
+    props:{
+        srcWeb       : '',
+        srcForgot    : '',
+        srcAccount   : '',
+        srcApp       : '',
+        srcImg       : '',
     },
 }
 </script>

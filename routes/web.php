@@ -11,10 +11,18 @@
 |
 */
 
+/** Route SPA
+ *  Router One Function the SPA
+*/
+Route::get('any/{any}', function ($any) {
+    return $any;
+})->where('any', '.*');
+
 /** Routes Auth
  * 
 */
 Auth::routes();
+
 Route::get('/login', 'Auth\LoginController@index')->name('login');
 
 /** Routes
@@ -22,10 +30,7 @@ Route::get('/login', 'Auth\LoginController@index')->name('login');
 */
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-/** Route SPA
- *  Router One Function the SPA
-*/
-Route::get('any/{any}', function ($any) {
-    return $any;
-})->where('any', '.*');
+/** Redirect
+ * redirection a la vista inicial
+ */
+Route::redirect('/', '/login');
